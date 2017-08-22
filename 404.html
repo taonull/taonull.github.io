@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>茶码话桑麻</title>
+
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+        div {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        div p {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>您访问的网站域名已经修改为：<a href="http://chaolongzhang.github.io">chaolongzhang.github.io</a>，该域名将不再使用。</p>
+        <p><span id="timespam">5</span>秒后跳转到 
+        <a href="http://chaolongzhang.github.io">新的域名</a>。
+        </p>
+    </div>
+
+<script type="text/javascript">
+    var c=5
+    var t
+    function timed_count()
+    {
+        c -= 1
+        if (c <= 0)
+        {
+            window.location.href="http://chaolongzhang.github.io" + window.location.pathname
+        }
+        else
+        {
+            document.querySelector('#timespam').innerHTML = c
+            t=setTimeout("timed_count()",1000)
+        }
+    }
+    t=setTimeout("timed_count()",1000)
+</script>
+</body>
+</html>
